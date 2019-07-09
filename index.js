@@ -22,7 +22,6 @@ var Gateway = function (config) {
   logging.init()
   this.plugins = [];
   this.pluginLoader = pluginsLib();
-
 };
 
 
