@@ -1,10 +1,9 @@
 'use strict';
 var debug = require('debug')('gateway:index');
-var util = require('util');
 var gateway = require('./lib/gateway');
 var assert = require('assert');
 var logging = require('./lib/logging');
-var stats = require('./lib/stats');
+
 
 var pluginsLib = require('./lib/plugins');
 var uuid = require('uuid')

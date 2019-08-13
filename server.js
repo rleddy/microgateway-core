@@ -12,7 +12,7 @@ const writeConsoleLog = require('./lib/logging').writeConsoleLog;
 var key, secret, source;
 process.argv.forEach(function (val) {
   let params = val.split('=');
-  if (params.length != 2) {
+  if (params.length !== 2) {
     return;
   }
   let k = params[0];
@@ -40,6 +40,7 @@ options.keys.key = key;
 options.keys.secret = secret;
 //get the config
 
+/*   PROBLEM:::  edgeConfig is not defined ... 
 edgeConfig.get(options, function (err, config) {
   assert(!err, err)
 
@@ -52,19 +53,26 @@ edgeConfig.get(options, function (err, config) {
   var plugins = server.getPluginsLoader().loadPlugins(pluginsDir);
   plugins && writeConsoleLog('log','plugins loaded ' + plugins.length)
   //start the server
-  server.start(plugins, (err, server) => {
+  server.start(plugins, (err , server ) => {
     assert(!err, err)
     writeConsoleLog('log','server is started');
   });
 })
 
+*/
 
 
+/*
 var defaultConfig = function (config) {
   //required by plugins
   config.key = key;
   config.secret = secret;
 
+  // set proxying options for the request module, if so configured
+  const requestOptions = config.edgemicro.proxy ? {
+    proxy: config.edgemicro.proxy,
+    tunnel: config.edgemicro.proxy_tunnel
+  } : {};
 
   //turn on by default
   config.analytics = config.analytics || {}
@@ -83,12 +91,6 @@ var defaultConfig = function (config) {
 
   }
 
-  // set proxying options for the request module, if so configured
-  const requestOptions = config.edgemicro.proxy ? {
-    proxy: config.edgemicro.proxy,
-    tunnel: config.edgemicro.proxy_tunnel
-  } : {};
-
   if (config.oauth) {
     config.oauth['request'] = requestOptions;
   }
@@ -97,3 +99,4 @@ var defaultConfig = function (config) {
     config.spikearrest['request'] = requestOptions;
   }
 }
+*/
