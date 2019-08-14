@@ -35,7 +35,6 @@ function launchFauxServer() {
 
     return myServer
 }
-  
 
 describe('target behavior', () => {
     //
@@ -48,7 +47,6 @@ describe('target behavior', () => {
                 return mockLogger
             }
         })
-        
         //
         var mockConfig = {
             headers : {
@@ -102,7 +100,6 @@ describe('target behavior', () => {
         var correlation_id = "osirusor"
         var cb = (e) => {
             console.log(e.message)
-            
             console.dir(sourceResponse,{ depth : 2 })
             assert(sourceResponse.statusCode === 502)
             assert("connect ECONNREFUSED 127.0.0.1:8888" === e.message)
@@ -124,7 +121,6 @@ describe('target behavior', () => {
                 return mockLogger
             }
         })
-        
         //
         var mockConfig = {
             headers : {
@@ -192,7 +188,6 @@ describe('target behavior', () => {
 
         treq.end()
     });
-    
     //
     it('handles connection TIMEMOUT', (done) => {
         //
