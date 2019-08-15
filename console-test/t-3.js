@@ -1,6 +1,4 @@
-const fs = require('fs')
-
-
+var fs = require('fs')
 var stream;
 stream = fs.createWriteStream("t1cout.txt");
 
@@ -8,14 +6,15 @@ stream = fs.createWriteStream("t1cout.txt");
 var hrstart = process.hrtime()
 
 for ( var i = 0; i < 11000000; i++ ) {
-    if ( (i%3) === 0) {
-        stream.write('w ' + "test string\n")
-    } else if ( i%3 === 1 ) {
-        stream.write('e ' + "test string\n")
-    } else {
-        stream.write('i ' + "test string\n")
-    }
+	var str = JSON.stringify({
+							 'id' : i,
+							 'aa' : i + 1,
+							 'cc' : "test" + 1,
+							 'zz' : 'sfsdfsdfdsf'
+							 })
+	stream.write(str + '\n')
 }
+
 
 
 const NS_PER_SEC = 1e9;

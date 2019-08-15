@@ -1,10 +1,14 @@
+var fs = require('fs')
+var stream;
+stream = fs.createWriteStream("t1cout.txt");
 
 
 var hrstart = process.hrtime()
 
-var x = 2
-var y = x + 2
-x = y + 1
+for ( var i = 0; i < 11000000; i++ ) {
+	stream.write('w\n')
+}
+
 
 
 const NS_PER_SEC = 1e9;

@@ -4,7 +4,7 @@ var fs = require('fs')
 
 var runnum = parseInt(process.argv[2])
 
-var runs = fs.readFileSync(`dat${runnum}.txt`).toString()
+var runs = fs.readFileSync(`gdat${runnum}.txt`).toString()
 
 
 runs = runs.split('====')

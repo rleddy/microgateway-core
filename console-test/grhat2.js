@@ -4,7 +4,20 @@ const fs = require('fs')
 
 
 var stream;
-stream = fs.createWriteStream("t1cout.txt");
+stream = fs.createWriteStream("ft1cout.txt");
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 var b = 2
 class LogLevel {
@@ -12,25 +25,8 @@ class LogLevel {
         this.stream = strm
         //this.b = 2
     }
-
-    warn(str) {
-        this.stream.write(`w ${b} ` + str + '\n')
-    }
-
-    error(str) {
-        this.stream.write(`e ${b} ` + str + '\n')
-    }
-
-    debug(str) {
-        this.stream.write(`d ${b} ` + str + '\n')
-    }
-
     critical(str) {
-        this.stream.write(`c ${b} ` + str + '\n')
-    }
-
-    info(str) {
-        this.stream.write(`i ${b} ` + str + '\n')
+        this.stream.write(`c ${b} ` + str + 'n')
     }
 }
 
@@ -41,15 +37,15 @@ var hrstart = process.hrtime()
 for ( var i = 0; i < 11000000; i++ ) {
     switch( i%5 ) {
         case 0: {
-            logger.warn('test string 1')
+            
             break;
         }
         case 1: {
-            logger.error('test string 2')
+            
             break;
         }
         case 2: {
-            logger.debug('test string 3')
+            
             break;
         }
         case 3: {
@@ -57,7 +53,7 @@ for ( var i = 0; i < 11000000; i++ ) {
             break;
         }
         case 4: {
-            logger.info('test string 5')
+            
             break;
         }
     }

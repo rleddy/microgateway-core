@@ -7,13 +7,15 @@ var stream;
 stream = fs.createWriteStream("ft1cout.txt");
 
 
-var setLevel = parseInt(process.argv[2])
-//
-const CRITICAL_LEVEL = 0
-const ERROR_LEVEL = 1
-const WARN_LEVEL = 2
-const DEBUG_LEVEL = 3
-const INFO_LEVEL = 4
+
+
+
+
+
+
+
+
+
 
 var b = 2
 class LogLevel {
@@ -22,29 +24,10 @@ class LogLevel {
         //this.b = 2
     }
     critical(str) {
-        if ( CRITICAL_LEVEL <= setLevel ) {
-            this.stream.write(`c ${b} ` + str + '\n')
-        }
+        this.stream.write(`c ${b} ` + str + 'n')
     }
     error(str) {
-        if ( ERROR_LEVEL <= setLevel ) {
-            this.stream.write(`e ${b} ` + str + '\n')
-        }
-    }
-    warn(str) {
-        if ( WARN_LEVEL <= setLevel ) {
-            this.stream.write(`w ${b} ` + str + '\n')
-        }
-    }
-    debug(str) {
-        if ( DEBUG_LEVEL <= setLevel ) {
-            this.stream.write(`d ${b} ` + str + '\n')
-        }
-    }
-    info(str) {
-        if ( INFO_LEVEL <= setLevel ) {
-            this.stream.write(`i ${b} ` + str + '\n')
-        }
+        this.stream.write(`e ${b} ` + str + 'n')
     }
 }
 
@@ -55,8 +38,7 @@ var hrstart = process.hrtime()
 for ( var i = 0; i < 11000000; i++ ) {
     switch( i%5 ) {
         case 0: {
-//
-            logger.warn('test string 1')
+            
             break;
         }
         case 1: {
@@ -64,8 +46,7 @@ for ( var i = 0; i < 11000000; i++ ) {
             break;
         }
         case 2: {
-//
-            logger.debug('test string 3')
+            
             break;
         }
         case 3: {
@@ -73,8 +54,7 @@ for ( var i = 0; i < 11000000; i++ ) {
             break;
         }
         case 4: {
-//
-            logger.info('test string 5')
+            
             break;
         }
     }
