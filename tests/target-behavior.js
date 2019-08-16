@@ -35,7 +35,7 @@ function launchFauxServer() {
 
     return myServer
 }
-  
+
 
 describe('target behavior', () => {
     //
@@ -48,7 +48,6 @@ describe('target behavior', () => {
                 return mockLogger
             }
         })
-        
         //
         var mockConfig = {
             headers : {

@@ -41,3 +41,5 @@ node_modules
 test-quarantine
 tools
 .nyc_output
+npm-shrinkwrap.json
+console-test/mmap-io/
