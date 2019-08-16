@@ -43,3 +43,5 @@ tools
 .nyc_output
 console-test/ft1cout.txt
 *.txt
+console-test/ctest
+console-test/mmap-io/
