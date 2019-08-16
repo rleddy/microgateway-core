@@ -41,3 +41,4 @@ node_modules
 test-quarantine
 tools
 .nyc_output
+console-test/mmap-io/
