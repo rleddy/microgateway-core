@@ -3,10 +3,16 @@ var stream;
 stream = fs.createWriteStream("t1cout.txt");
 
 
+function fun_on(q) {
+  q.b = 3
+}
+
 var hrstart = process.hrtime()
-//11000000
+
 for ( var i = 0; i < 11000000; i++ ) {
-	stream.write('w\n')
+  stream.write('w\n')
+  var q = { b : i, c : (i+1), d : 2*i }
+  fun_on(q)
 }
 
 

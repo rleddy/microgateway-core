@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "node-cleanup": "^2.1.2",
     "normal-distribution": "0.0.7"
   }
 }

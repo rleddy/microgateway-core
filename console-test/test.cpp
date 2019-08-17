@@ -6,6 +6,7 @@ using namespace std;
 
 
 int main(int argc, char **argv) {
+
 	cout << "this is a test" << endl;
 	
 	clock_t start = clock();
